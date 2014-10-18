@@ -468,6 +468,10 @@ margin on the iframe, cause it breaks stuff. */
    4. General - The main styles for the the theme
    ========================================================================== */
 
+.fa {
+    margin-right: 6px;
+}
+
 /* Big cover image on the home page */
 .main-header {
     position: relative;
@@ -503,10 +507,10 @@ margin on the iframe, cause it breaks stuff. */
     z-index: 100;
     bottom: 45px;
     left: 50%;
-    margin-left: -16px;
+    margin-left: -32px;
     width: 34px;
     height: 34px;
-    font-size: 34px;
+    font-size: 68px;
     text-align: center;
     text-decoration: none;
     color: rgba(255,255,255,0.7);
@@ -617,6 +621,31 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 6px;
 }
 
+/* Styles for the two additional nav buttons */
+.menu-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    padding: 0 20px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    transition: all ease 0.3s;
+    margin-right: 15px;
+}
+
+.menu-button:before {
+    font-size: 9px;
+    margin-right: 6px;
+}
+
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
     position: absolute;
@@ -640,6 +669,7 @@ margin on the iframe, cause it breaks stuff. */
     color: #fff;
 }
 
+.main-nav.overlay .menu-button,
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
     border-color: rgba(255,255,255,0.6);
@@ -653,6 +683,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Add a border to the buttons on hover */
+.menu-button:hover,
 .back-button:hover,
 .subscribe-button:hover {
     border-color: #bfc8cd;
@@ -681,7 +712,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .no-cover.main-header {
     min-height: 160px;
-    max-height: 40%;
+    max-height: 45%;
     background: #f5f8fa;
 }
 
@@ -693,6 +724,7 @@ margin on the iframe, cause it breaks stuff. */
     color: rgba(0,0,0,0.5);
 }
 
+.no-cover .main-nav.overlay .menu-button,
 .no-cover .main-nav.overlay .back-button,
 .no-cover .main-nav.overlay .subscribe-button {
     color: rgba(0,0,0,0.4);
@@ -1278,7 +1310,7 @@ body:not(.post-template) .post-title {
 
 /* On page2+ make all the headers smaller */
 .archive-template .main-header {
-    max-height: 30%;
+    max-height: 45%;
 }
 
 /* On page2+ show extra pagination controls at the top of post list */
@@ -1345,9 +1377,12 @@ body:not(.post-template) .post-title {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         height: auto;
+/* takes up too much space 2014-10-18
         min-height: 240px;
         height: 60%;
         padding: 15% 0;
+*/
+	padding: 28px 0;
     }
 
     .scroll-down,
@@ -1485,6 +1520,7 @@ body:not(.post-template) .post-title {
         height: 26px;
     }
 
+    .menu-button,
     .back-button,
     .subscribe-button {
         height: 44px;
@@ -1493,6 +1529,7 @@ body:not(.post-template) .post-title {
         color: #2e2e2e;
         background: transparent;
     }
+    .menu-button:hover,
     .back-button:hover,
     .subscribe-button:hover {
         border-color: #ebeef0;
@@ -1504,6 +1541,7 @@ body:not(.post-template) .post-title {
         padding: 0 15px 0 10px;
     }
 
+    .menu-button,
     .subscribe-button {
         padding: 0 12px;
     }
@@ -1517,11 +1555,18 @@ body:not(.post-template) .post-title {
     .no-cover .main-nav.overlay {
         background: none;
     }
+
+    .no-cover .main-nav.overlay .menu-button {
+        background: none;
+    }
+
+    .no-cover .main-nav.overlay .menu-button,
     .no-cover .main-nav.overlay .back-button,
     .no-cover .main-nav.overlay .subscribe-button {
         border: none;
     }
 
+    .main-nav.overlay .menu-button,
     .main-nav.overlay .back-button,
     .main-nav.overlay .subscribe-button {
         border-color: transparent;
